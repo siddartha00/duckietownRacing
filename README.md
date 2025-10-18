@@ -45,3 +45,35 @@ a launcher will be created for it. For example, the script file
 
 When launching a new container, you can simply provide `dt-launcher-my-launcher` as
 command.
+
+
+
+# Basic Insturctions for Accessing development Environment
+
+To access `raspberryPi` from VSCode, use hostname as `siddartha@PiBox.local` and password as `siddartha`
+The repository is present in `duckietownRacing`.
+
+# Basic Instructions to build and run docker container on duckiebot using `dts`
+
+## Container Tools in VSCode
+
+1) Install `Container Tools` extension in VSCode.
+2) Open Containers tab by clicking on containers button.
+3) Extend the `Docker contexts` and right click on `duckeibot12`.
+4) Select use from the dropdown menu.
+
+## Building the Docker container image after adding code
+
+To build the docker image locally on `raspberryPi` use
+
+    dts devel build -f
+
+To build the docker image on `duckiebot12` use
+
+    dts devel build -H duckiebot12 -f
+
+## Running the Docker container image after adding code
+
+To run the docker image on `duckiebot12`
+
+    dts devel run -H duckiebot12 -L launch
