@@ -74,6 +74,24 @@ To build the docker image on `duckiebot12` use
 
 ## Running the Docker container image after adding code
 
-To run the docker image on `duckiebot12`
+To run the docker image on `duckiebot12`.
 
     dts devel run -H duckiebot12 -L launch
+
+The above command is used to run the image with `launch.sh` present in `launchers` directory.
+
+
+## Accessing `rostopic` on `duckiebot12`
+
+* To access the `rostopic` on `duckiebot12`, we are using `dt-gui-tools` container present on `raspberryPi`.
+1) Select `default` docker context in *Docker Contexts* before trying to access `rostopic` on `duckiebot12`.
+2) Run the below command to access `gui-tools` on `duciebot12`.
+
+        dts start_gui_tools duckiebot12
+
+
+# References for Duckietown
+
+[Duckiebot Setup Manual](https://docs.duckietown.com/ente/duckietown-manual/10-setup/setup-introduction.html)
+
+[Duckiebot ROS Manual](https://docs.duckietown.com/daffy/dt-ros-commons/index.html)
