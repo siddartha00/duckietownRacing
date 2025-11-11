@@ -36,6 +36,13 @@ ARG TARGETVARIANT
 RUN dt-build-env-check "${REPO_NAME}" "${MAINTAINER}" "${DESCRIPTION}"
 
 # define/create repository path
+RUN python3 -m pip install --upgrade pip setuptools wheel
+
+# RUN pip uninstall -y numpy
+# RUN pip cache purge
+RUN pip install numpy==1.24.4
+
+
 ARG REPO_PATH="${CATKIN_WS_DIR}/src/${REPO_NAME}"
 ARG LAUNCH_PATH="${LAUNCH_DIR}/${REPO_NAME}"
 RUN mkdir -p "${REPO_PATH}" "${LAUNCH_PATH}"
